@@ -1,7 +1,6 @@
 package com.springboot.restapi.onetoone;
 
 import java.util.Date;
-import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,9 +26,19 @@ public class People {
 	Date Dob;
 	
 	
-	@OneToOne(mappedBy="people")
-	@JoinColumn(referencedColumnName="id")
-	List<Bank> bank;
+	@OneToOne
+	@JoinColumn(name="bank_id")
+	private Bank bank;
+
+
+	public Bank getBank() {
+		return bank;
+	}
+
+
+	public void setBank(Bank bank) {
+		this.bank = bank;
+	}
 
 
 	public long getId() {
@@ -71,17 +80,6 @@ public class People {
 		Dob = dob;
 	}
 
-
-	public List<Bank> getBank() {
-		return bank;
-	}
-
-
-	public void setBank(List<Bank> bank) {
-		this.bank = bank;
-	}
-
-
 	public People(String firstname, String lastname, Date dob) {
 		super();
 		this.firstname = firstname;
@@ -92,10 +90,6 @@ public class People {
 
 	public People() {
 		super();
-	}
-	
-	
-	
-	
+	}	
 
 }

@@ -17,8 +17,6 @@ public class Bank {
 	private Long id;
 	private String bankname;
 	private String phoneno;
-	
-	List<People> people;
 
 	public Long getId() {
 		return id;
@@ -44,13 +42,6 @@ public class Bank {
 		this.phoneno = phoneno;
 	}
 
-	public List<People> getPeople() {
-		return people;
-	}
-
-	public void setPeople(List<People> people) {
-		this.people = people;
-	}
 
 	public Bank(String bankname, String phoneno) {
 		super();

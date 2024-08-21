@@ -23,7 +23,7 @@ public class User {
 	
 	
 	@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
-	List<Vechiles> vechiles;
+	private List<Vechiles> vechiles;
 
 
 	public long getId() {
